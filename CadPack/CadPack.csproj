@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{0AF14BCE-CF42-4659-9077-A46335C2522B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CadPack</RootNamespace>
+    <AssemblyName>CadPack</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcCoreMgd">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcDbMgd">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcMgd">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AdWindows">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcWindows">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acdbmgdbrep">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcCui">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <!--ACA References Begin-->
+    <!--ACA Refences End-->
+    <!--AME Referebces Begin-->
+    <!--AME Reference End-->
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dim_AddID.LSP" />
+    <None Include="Resources\TestButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Material.cs" />
+    <Compile Include="myCommands.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myCommands.resx</DependentUpon>
+    </Compile>
+    <Compile Include="myPlugin.cs" />
+    <Compile Include="myCommands.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="myCommands.resx">
+      <DependentUpon>myCommands.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>myCommands.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TestButton_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TestButton_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TestButton_Mid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_Purge_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_Audit_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_Isolines_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_CleanDrawing_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_CleanDrawing_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_Lineweights.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_VP_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean Solids.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_DelAllLayouts_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean_DelOtherLayouts_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF - Raw %28.125%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadPack_Fasteners_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadPack_Steel_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadPack_Weld_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Audit_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_BaseView_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Box_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_CenLine_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_CenMark_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_ChamferEdge_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Chop_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_CleanLayout_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_CleanSolids_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Cone_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_CrossPiece_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Cylinder_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DadoJoint_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DadoLoop_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DeleteAllLayout_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DeleteFace_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DeleteLayout_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DeleteOtherLayouts_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DetailView_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimAligned_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimAngular_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimBaseLine_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimBreak_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimContinue_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimDiam_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimDisasso_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimFlipArrow_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimInspect_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimJog_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimLinear_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimReasso_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Dimspace_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimTextEdit_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimUpdate_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_DimValueEdit_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Divide_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Explode_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Extrude_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_ExtrudeFace_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_FilletEdge_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Find_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Fixture_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Flat_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Gap_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_InsideLoop_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Interfere_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Intersect_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Isolines_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Knife_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Lay_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_LeaderUpdate_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Lineweights_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Loft_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_MeasureAngle_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_MeasureDist_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_MeasureRad_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_MeasureVol_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_MLeader_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_MLeaderAlign_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_MLeaderCollect_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_MoveFace_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_NCPrepare_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Numbering_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_OffsetEdge_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_OffsetFace_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_OutsideLoop_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_OverallDims_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Polysolid_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_PressPull_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_ProjectView_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Purge_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_QLeader_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_RevCloud_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Revolve_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_RotateFace_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Saw_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SectionView_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Select2D_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SelectAnno_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SelectEdge_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SelectFace_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SelectInsert_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SelectNoFilter_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SelectNoName_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SelectSame_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SelectVerts_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Seperate_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Shell_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Slice_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SolSize_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SpellCheck_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Sphere_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Subtract_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SumArea_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SumLength_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Sweep_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_SweepSize_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_TaperFace_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Union_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Viewports_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_Wipeout_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPack_XEdges_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mat_MDF - Raw %28.25%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mat_MDF - Raw %28.50%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mat_MDF - Raw %28.75%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mat_MDF - Raw %28.125%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mat_MDF - Raw %28.375%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mat_MDF - Raw %28.625%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mat_MDF - Raw %28.3125%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mat_MDF - Raw %281.0%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF Laminated - xxx %28.875%29 - Grain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF Laminated - xxx %28.875%29 - Solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF Laminated - xxx %28.5625%29 - Grain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF Laminated - xxx %28.5625%29 - Solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF Laminated - xxx %28.8125%29 - Grain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF Laminated - xxx %28.8125%29 - Solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF Laminated - xxx %281.125%29 - Grain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF Laminated - xxx %281.125%29 - Solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plywood - Bending %28.35%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plywood - Raw %28.25%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plywood - Raw %28.50%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plywood - Raw %28.75%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Post Laminate - xxx - Grain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Post Laminate - xxx - Solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PVC Edge - xxx %28.02%29 .5MM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PVC Edge - xxx %28.04%29 1MM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PVC Edge - xxx %28.125%29 3MM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate - 11 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate - 12 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate - 13 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate - 14 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate - 16 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate - 18 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate - 20 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate %28.25%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate %28.125%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S. Steel Plate %28.1875%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate - 11 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate - 12 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate - 13 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate - 14 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate - 16 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate - 18 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate - 20 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate %28.25%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate %28.125%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Plate %28.1875%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Tube - 11 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Tube - 13 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Tube - 14 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steel Tube - 16 Gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF - Raw %28.25%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF - Raw %28.50%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF - Raw %28.75%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF - Raw %28.375%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF - Raw %28.625%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF - Raw %28.3125%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDF - Raw %281.0%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Countertop - Dark %28.50%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Countertop - Light %28.50%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Post_Laminate___xxx___Grain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arc Dimension.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DimPrec4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DimPrec5.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DimPrec6.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DimRemoveArrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DimRemoveDim.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DimRemoveExt.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jogged Dimension.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrdinateDimension.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectHatches.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
