@@ -2407,6 +2407,7 @@ namespace CadPack
                         Text = "Cleanup",
                         ShowText = true,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.Clean_CleanDrawing_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.Clean_CleanDrawing_L),
                         Orientation = Orientation.Vertical,
                         Size = RibbonItemSize.Large,
@@ -2422,6 +2423,7 @@ namespace CadPack
                         Text = "Clean\nSolids",
                         ShowText = false,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_CleanSolids_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_CleanSolids_L),
                         Orientation = Orientation.Horizontal,
                         Size = RibbonItemSize.Standard,
@@ -2437,6 +2439,7 @@ namespace CadPack
                         Text = "Purge",
                         ShowText = false,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_Purge_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_Purge_L),
                         Orientation = Orientation.Horizontal,
                         Size = RibbonItemSize.Standard,
@@ -2453,6 +2456,7 @@ namespace CadPack
                         Text = "Audit",
                         ShowText = false,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_Audit_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_Audit_L),
                         Orientation = Orientation.Horizontal,
                         Size = RibbonItemSize.Standard,
@@ -2468,6 +2472,7 @@ namespace CadPack
                         Text = "Fix\nIsolines",
                         ShowText = false,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_Isolines_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_Isolines_L),
                         Orientation = Orientation.Horizontal,
                         Size = RibbonItemSize.Standard,
@@ -2483,6 +2488,7 @@ namespace CadPack
                         Text = "Fix\nLineweights",
                         ShowText = false,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_Lineweights_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_Lineweights_L),
                         Orientation = Orientation.Horizontal,
                         Size = RibbonItemSize.Standard,
@@ -2498,6 +2504,7 @@ namespace CadPack
                         Text = "Fix\nViewports",
                         ShowText = false,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_Viewports_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_Viewports_L),
                         Orientation = Orientation.Horizontal,
                         Size = RibbonItemSize.Standard,
@@ -2530,6 +2537,7 @@ namespace CadPack
                         Text = "Select\n2D Elements",
                         ShowText = true,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_Select2D_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_Select2D_L),
                         Orientation = Orientation.Vertical,
                         Size = RibbonItemSize.Large,
@@ -2543,6 +2551,7 @@ namespace CadPack
                         Text = "Select\nAnnotations",
                         ShowText = true,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_SelectAnno_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_SelectAnno_L),
                         Orientation = Orientation.Vertical,
                         Size = RibbonItemSize.Large,
@@ -2556,6 +2565,7 @@ namespace CadPack
                         Text = "Select\nHatches",
                         ShowText = true,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.SelectHatches),
                         LargeImage = ImageHandler.GetBitmap(Resources.SelectHatches),
                         Orientation = Orientation.Vertical,
                         Size = RibbonItemSize.Large,
@@ -2569,6 +2579,7 @@ namespace CadPack
                         Text = "Select\nBlocks",
                         ShowText = true,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_SelectInsert_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_SelectInsert_L),
                         Orientation = Orientation.Vertical,
                         Size = RibbonItemSize.Large,
@@ -2598,6 +2609,7 @@ namespace CadPack
                         Text = "Delete Other Layouts",
                         ShowText = false,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_DeleteOtherLayouts_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_DeleteOtherLayouts_L),
                         Orientation = Orientation.Horizontal,
                         Size = RibbonItemSize.Standard,
@@ -2613,6 +2625,7 @@ namespace CadPack
                         Text = "Delete All Layouts",
                         ShowText = false,
                         ShowImage = true,
+                        Image = ImageHandler.GetBitmap(Resources.CPack_DeleteAllLayout_L),
                         LargeImage = ImageHandler.GetBitmap(Resources.CPack_DeleteAllLayout_L),
                         Orientation = Orientation.Horizontal,
                         Size = RibbonItemSize.Standard,
@@ -2636,11 +2649,11 @@ namespace CadPack
 
                     //Add Buttons to Cleanup Panel
                     var cleanupPanelRow1 = new RibbonRowPanel {IsTopJustified = true};
-                    cleanupPanelRow1.Items.Add(cPackCleanSelectDropDownButton);
+                    cleanupPanelRow1.Items.Add(cPackCleanDelLayoutsButton);
                     cleanupPanelRow1.Items.Add(new RibbonRowBreak());
                     cleanupPanelRow1.Items.Add(cPackCleanupDropDownButton);
-                    cleanupPanelRow1.Items.Add(new RibbonRowBreak());
-                    cleanupPanelRow1.Items.Add(cPackCleanDelLayoutsButton);
+                    cleanupPanelRow1.Items.Add(new RibbonRowBreak());            
+                    cleanupPanelRow1.Items.Add(cPackCleanSelectDropDownButton);
 
                     //Add Rows To Cleanup Panel
                     cleanupPanel.Items.Add(cleanupPanelRow1);
