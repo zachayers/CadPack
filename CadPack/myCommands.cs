@@ -2509,11 +2509,11 @@ namespace CadPack
 
                     var cPackCleanupDropDownButton = new RibbonSplitButton
                     {
-                        Text = "Clean\nDrawing",
+                        Text = "Clean",
                         SynchronizeOption = RibbonListButton.RibbonListButtonSynchronizeOption.Image,
                         ShowText = true,
-                        Orientation = Orientation.Vertical,
-                        Size = RibbonItemSize.Large
+                        Orientation = Orientation.Horizontal,
+                        Size = RibbonItemSize.Standard
                     };
 
                     cPackCleanupDropDownButton.Items.Add(cPackCleanButton);
@@ -2579,11 +2579,11 @@ namespace CadPack
                     // Create Selection Drop Down Button
                     var cPackCleanSelectDropDownButton = new RibbonSplitButton
                     {
-                        Text = "Select\nElements",
+                        Text = "Select",
                         SynchronizeOption = RibbonListButton.RibbonListButtonSynchronizeOption.Image,
                         ShowText = true,
-                        Orientation = Orientation.Vertical,
-                        Size = RibbonItemSize.Large
+                        Orientation = Orientation.Horizontal,
+                        Size = RibbonItemSize.Standard
                     };
 
                     cPackCleanSelectDropDownButton.Items.Add(cPackCleanSelect2DButton);
@@ -2624,11 +2624,11 @@ namespace CadPack
 
                     var cPackCleanDelLayoutsButton = new RibbonSplitButton
                     {
-                        Text = "Delete\nLayouts",
+                        Text = "Delete",
                         SynchronizeOption = RibbonListButton.RibbonListButtonSynchronizeOption.Image,
                         ShowText = true,
-                        Orientation = Orientation.Vertical,
-                        Size = RibbonItemSize.Large
+                        Orientation = Orientation.Horizontal,
+                        Size = RibbonItemSize.Standard
                     };
 
                     cPackCleanDelLayoutsButton.Items.Add(cPackDelOtherLaysButton);
@@ -2637,17 +2637,13 @@ namespace CadPack
                     //Add Buttons to Cleanup Panel
                     var cleanupPanelRow1 = new RibbonRowPanel {IsTopJustified = true};
                     cleanupPanelRow1.Items.Add(cPackCleanSelectDropDownButton);
-
-                    var cleanupPanelRow2 = new RibbonRowPanel {IsTopJustified = true};
-                    cleanupPanelRow2.Items.Add(cPackCleanupDropDownButton);
-
-                    var cleanupPanelRow3 = new RibbonRowPanel {IsTopJustified = true};
-                    cleanupPanelRow3.Items.Add(cPackCleanDelLayoutsButton);
+                    cleanupPanelRow1.Items.Add(new RibbonRowBreak());
+                    cleanupPanelRow1.Items.Add(cPackCleanupDropDownButton);
+                    cleanupPanelRow1.Items.Add(new RibbonRowBreak());
+                    cleanupPanelRow1.Items.Add(cPackCleanDelLayoutsButton);
 
                     //Add Rows To Cleanup Panel
                     cleanupPanel.Items.Add(cleanupPanelRow1);
-                    cleanupPanel.Items.Add(cleanupPanelRow2);
-                    cleanupPanel.Items.Add(cleanupPanelRow3);
 
                     #endregion
 
