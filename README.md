@@ -1,3 +1,21 @@
-# CadPack
+# Cadpack
+[![GitHub Release](https://img.shields.io/github/release/zjayers/CadPack.svg?style=flat)]()
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/zjayers/CadPack.svg?style=flat)]()
+[![Issues](https://img.shields.io/github/issues-raw/zjayers/CadPack.svg?maxAge=25000)](https://github.com/zjayers/CadPack/issues)
+[![MIT License](https://img.shields.io/apm/l/atomic-ui.svg?)](https://github.com/zjayers/CadPack/blob/master/LICENSEs)
 
-This is a simple plugin with custom commands, calls to existing commands, and LISP files which speed up drafting productivity.
+## Description
+
+> Work in progress
+
+## Features
+
+> Work in progress
+
+## Installation
+
+> Work in progress
+
+## Usage
+
+> Work in progress
